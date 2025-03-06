@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+nav { 
+    width: 100%;
+    height: 100px;
+    background-color: #dbdbdb;
+    display: grid;
+    grid-template-columns: auto 1fr 40px;
+    align-items: center;
+    padding: 0 45px;
+    border-bottom: 0.5px solid #BFAF6F;
+}
+
+logo {
+    margin: 0 10px;
+}
+
+nav links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav links a {
+    color: #1E1E1E;
+    text-decoration: none;
+    margin: 0 10px;
+    padding-left: 15px;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+a:hover {
+    color: #A3A3A3;
+}
+
+info square {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+info square:hover {
+    svg {
+        stroke: #A3A3A3;
+    }
+}
+
+info square svg {
+    stroke: #1E1E1E;
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+}
+
+menu {
+    display: none;
+}
+
+menu square {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+menu square:hover {
+    svg {
+        stroke: var(--primary-color);
+    }
+}
+
+menu square svg {
+    stroke: var(--white);
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    background: #1E1E1E;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-mobile {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.46);
+    width: 200px;
+    display: flex;
+
+    flex-direction: column;
+    pointer-events: none;
+    text-align: start;
+    /* Impede interação enquanto o menu estiver fechado */
+}
+
+.menu-mobile.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    /* Permite interação quando o menu estiver aberto */
+    box-shadow: -10px 0 100px rgba(0, 0, 0, 0.46);
+
+}
+
+
+
+.menu-mobile a {
+    color: #dbdbdb;
+    margin: 20px 20px 20px 20%;
+    text-align: center;
+    font-weight: bolder;
+    transition: 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.menu-mobile a:hover {
+    color: #ffee87;
+    font-size: 20px;
+}
+
+.menu-mobile a:last-child {
+    border-bottom: none;
+}
+
+.menu-bar {
+    width: 100%;
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#banner {
+    padding: 10em 0 4.75em 0;
+    
+    background-color: #1E1E1E;
+    background-size: cover;
+    background-position: center;
+}
+
+#banner .inner {
+    margin: 0 auto;
+    width: 55em;
+}
+
+#banner .logo {
+    margin: 0 0 1.3em 0;
+    opacity: 1;
+}
+
+#banner .logo .icon {
+    border-radius: 100%;
+    border: solid 2px #ffee87;
+    display: inline-block;
+    font-size: 2em;
+    height: 2.25em;
+    line-height: 2.25em;
+    text-align: center;
+    width: 2.25em;
+}
+
+#banner .logo .icon svg {
+    stroke: #ffee87;
+}
+
+#banner h2 {
+    color: #dbdbdb;
+    opacity: 1;
+    border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+    font-size: 2.25em;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.4em;
+}
+
+#banner p {
+    color: #ffee87;
+    opacity: 1;
+    font-size: 1em;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    text-transform: uppercase;
+}
+
+.wrapper {
+    z-index: 2;
+    background-color: #fff3a6;
+    margin: 6.5em 0;
+    position: relative;
+    padding: 3em 0 1em;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.wrapper .content h2 {
+    border-bottom: solid 2px rgba(0, 0, 0, 0.125);
+    margin-bottom: 0.8em;
+    padding-bottom: 0.4em;
+}
+
+.wrapper:before, .wrapper:after {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23fff3a6' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: '';
+    display: block;
+    height: 6.5em;
+    position: absolute;
+    width: 100%;
+}
+
+.wrapper:before {
+    box-shadow: inset 0 -1px 0 0 #fff3a6, 0 1px 0 0 #fff3a6;
+    left: 0;
+    top: -6.5em;
+}
+
+.wrapper:after {
+    box-shadow: inset 0 -1px 0 0 #fff3a6, 0 1px 0 0 #fff3a6;
+    bottom: -6.5em;
+    left: 0;
+    transform: scaleY(-1);
+}
+
+/* Ajuste da seção para organização correta */
+.wrapper.spotlight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 3em 2em;
+}
+
+/* Container interno organizando o layout */
+.wrapper.spotlight .inner {
+    margin-left: 20em;
+    display: flex;
+    align-items: center;
+    max-width: 900px; /* Define uma largura máxima */
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row-reverse; /* Inverte a posição da imagem e do texto */
+}
+
+/* Ajusta o conteúdo textual */
+.wrapper.spotlight .content {
+    max-width: 75%;
+}
+
+/* Alinha o título, parágrafo e botão à esquerda */
+.wrapper.spotlight .content h2,
+.wrapper.spotlight .content p {
+    text-align: right;
+}
+
+/* Ajusta a imagem para ficar à direita */
+.wrapper.spotlight .image {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 35px;
+}
+
+/* Deixa a imagem redonda */
+.wrapper.spotlight .image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover;
+    border: 2px solid #1E1E1E;
+}
+
+/* Ajuste da seção para organização correta */
+.wrapper2.spotlight {
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left; /* Texto alinhado à esquerda */
+    padding: 7em 3em 5em;
+}
+
+/* Container interno organizando o layout */
+.wrapper2.spotlight .inner {
+    margin-right: 20em;
+    display: flex;
+    align-items: center;
+    max-width: 900px; /* Define uma largura máxima */
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row; /* Mantém a imagem à esquerda */
+}
+
+/* Ajusta o conteúdo textual */
+.wrapper2.spotlight .content {
+    max-width: 75%;
+}
+
+.wrapper2.spotlight .content h2 {
+    border-bottom:  solid 2px rgba(255, 255, 255, 0.125);
+    margin-bottom: 0.8em;
+    padding-bottom: 0.4em;
+}
+
+/* Alinha o título, parágrafo e botão à esquerda */
+.wrapper2.spotlight .content h2,
+.wrapper2.spotlight .content p {
+    text-align: left;
+    color: #dbdbdb;
+}
+
+/* Ajusta a imagem para ficar à esquerda */
+.wrapper2.spotlight .image {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 35px; /*aumenta o espaço entre o texto e a imagem*/
+}
+
+/* Deixa a imagem redonda */
+.wrapper2.spotlight .image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover;
+    border: 2px solid #fff3a6;
+}
+
+.motto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px 25px;
+    text-align: center;
+    background-color: #A3A3A3;
+}
+
+.motto p {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 75%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .hamburger {
+        display: flex;
+    }
+
+    body {
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+    }
+    
+    nav {
+        width: 100%;
+        height: auto;
+        padding: 15px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    
+    logo img {
+        width: 120px;
+        height: auto;
+    }
+
+    menu {
+        display: flex !important;
+    }
+
+    menu square svg {
+        stroke: #1E1E1E;
+        width: 30px;
+        height: 30px;
+        transition: 0.3s;
+    }
+
+    menu square:hover {
+        svg {
+            stroke: #A3A3A3;
+        }
+    }
+
+    info {
+        display: none;
+    }
+    
+    links {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #8B3E3E;
+        padding: 10px 0;
+        text-align: center;
+    }
+    
+    links a {
+        display: block;
+        padding: 10px;
+    }
+
+    #banner {
+        padding: 5em 1em;
+        text-align: center;
+    }
+
+    #banner .inner {
+        width: 90%;
+    }
+
+    .wrapper.spotlight, 
+    .wrapper2.spotlight {
+        display: flex;
+        flex-direction: row; /* Mantém imagem ao lado do texto */
+        align-items: center;
+        justify-content: space-between;
+        padding: 2em 1em;
+        gap: 1em;
+    }
+
+    .wrapper.spotlight .content, 
+    .wrapper2.spotlight .content {
+        flex: 1;
+        min-width: 130%;
+        text-align: left;
+        padding: 1em;
+    }
+
+    .wrapper.spotlight .image, 
+    .wrapper2.spotlight .image {
+        flex: 1;
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .wrapper.spotlight .image img, 
+    .wrapper2.spotlight .image img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .wrapper2.spotlight {
+        min-height: 100vh;
+    }
+}
