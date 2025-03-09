@@ -236,6 +236,72 @@ about {
     margin-bottom: 16px;
 }
 
+.history-container {
+    margin: 0 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: start;
+    text-align: center;
+}
+
+.container {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 350px; /* Defina um tamanho fixo */
+}
+
+.container img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.container img[src*="unicesumar"] {
+    transform: scale(0.9); /* Reduz ligeiramente a imagem */
+    margin-top: -30px; /* Ajuste fino para alinhar */
+    margin-bottom: -30px;
+}
+
+.container p {
+    text-align: justify;
+    font-weight: 500;
+}
+
+.container #bold {
+    font-weight: bold;
+}
+
+#ecologic {
+    height: 400px;
+    justify-self: center;
+}
+
+#image-ecologic {
+    margin-top: -50px;
+    margin-bottom: -45px;
+}
+
+#image-senai {
+    margin-top: -35px;
+    margin-bottom: -23px;
+}
+
+#senai #bold {
+    text-align: center;
+}
+
+#kelly {
+    max-width: 470px;
+    height: 300px;
+    margin-bottom: 90px;
+}
+
 professional-history {
     display: flex;
     flex-direction: column;
@@ -315,9 +381,9 @@ courses li svg {
     width: 300px;
 }
   
-footer {
+/*footer {
     width: 100%;
-    color: #dbdbdb;
+    color: #333333;
 }
 
 .footer-link {
@@ -341,7 +407,7 @@ social-media {
     margin-top: 1.5rem;
 }
 
-social-media .footer-link {
+social-media square {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -349,10 +415,11 @@ social-media .footer-link {
     width: 2.5rem;
     color: #dbdbdb;
     border-radius: 50%;
+    cursor: pointer;
     transition: all 0.4s;
 }
 
-social-media .footer-link svg {
+social-media svg {
     width: 20px;
     height: 20px;
 }
@@ -361,15 +428,15 @@ social-media .footer-link:hover {
     opacity: 0.8;
 }
 
-social-media #instagram {
+social-media #icon-media-instagram {
     background: linear-gradient(#7F37C9, #FF2992, #FF9807);
 }
 
-social-media #facebook {
+social-media #icon-media-facebook {
     background-color: #4267B3;
 }
 
-social-media #phone {
+social-media #icon-media-whatsapp {
     background-color: #25D366;
 }
 
@@ -396,7 +463,7 @@ footer-copyright {
     font-size: 0.9rem;
     padding: 1.5rem;
 
-}
+}*/
 
 
 
@@ -471,6 +538,55 @@ footer-copyright {
     margin: 0 0 20px 0;
     display: flex;
     justify-content: center;
+}
+
+#footer {
+    background-color: #222; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 30px;
+    font-family: Arial, sans-serif;
+}
+
+/* Ícones das redes sociais */
+.footer-left {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    background-color: #444; /* Fundo dos ícones */
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon:hover {
+    background-color: #666;
+}
+
+/* Créditos ao desenvolvedor */
+.footer-right {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Texto inferior com fundo diferente */
+.footer-bottom {
+    background-color: #111; /* Cor diferente do footer */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    width: 100%;
 }
 
 
@@ -704,18 +820,45 @@ footer-copyright {
             }
         }
 
-        footer-content {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+        .history-container {
+            grid-template-columns: 1fr; /* Um item por linha */
+            gap: 10px; /* Reduz o espaçamento entre os blocos */
+            margin: 0 10px; /* Diminui as margens laterais */
+        }
+    
+        .container {
+            height: auto; /* Altura ajustável conforme o conteúdo */
+            padding: 10px; /* Menos padding para evitar espaços excessivos */
+        }
+    
+        .container img {
+            max-width: 100%; /* Garante que a imagem não ultrapasse o container */
+            height: auto; /* Mantém a proporção */
+        }
+    
+        #kelly {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 40px; /* Reduz margem inferior */
         }
 
-    }
+        #footer {
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+    
+        .footer-left {
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+    
+        .footer-right {
+            margin-top: 10px;
+        }
+       
+        
 
-@media only screen and (max-width: 426px) {
-    footer-content {
-        grid-template-columns: repeat(1, 1fr);
-        padding: 3rem 2rem;
     }
-}
 
 
